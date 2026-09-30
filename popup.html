@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <strong>Export CSV</strong>
+    <span id="site" class="site">…</span>
+  </header>
+
+  <button id="btn-orders" class="primary" disabled>Exporter les commandes</button>
+  <button id="btn-cart" disabled>Exporter le panier</button>
+
+  <fieldset>
+    <legend>Commandes à exporter</legend>
+    <label class="radio"><input type="radio" name="mode" value="visible"> Page affichée uniquement</label>
+    <label class="radio"><input type="radio" name="mode" value="range" checked> Tout l’historique, filtré par date :</label>
+    <label class="opt">Du <input id="from" type="date"></label>
+    <label class="opt">Au <input id="to" type="date"></label>
+    <p class="hint">Dates vides = sans limite.</p>
+  </fieldset>
+  <label class="opt">
+    Séparateur
+    <select id="sep">
+      <option value=";">; (Excel FR)</option>
+      <option value=",">, (standard)</option>
+    </select>
+  </label>
+
+  <p id="status" class="status"></p>
+  <p id="hint" class="hint"></p>
+  <p class="hint"><a href="#" id="diag">Rien trouvé ? Enregistrer la page pour diagnostic</a></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
